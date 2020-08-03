@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-let buah = [
-    {nama: "Semangka", harga: 10000, berat: "1 kg"},
-    {nama: "Anggur", harga: 40000, berat: "0.5 kg"},
-    {nama: "Strawberry", harga: 30000, berat: "0.4 kg"},
-    {nama: "Jeruk", harga: 30000, berat: "1 kg"},
-    {nama: "Mangga", harga: 30000, berat: "0.5 kg"},
-];
+let dataHargaBuah = [
+    {nama: "Semangka", harga: 10000, berat: 1000},
+    {nama: "Anggur", harga: 40000, berat: 500},
+    {nama: "Strawberry", harga: 30000, berat: 400},
+    {nama: "Jeruk", harga: 30000, berat: 1000},
+    {nama: "Mangga", harga: 30000, berat: 500}
+  ]
 
 class Table extends Component {
     render() {
@@ -20,12 +20,12 @@ class Table extends Component {
                     </tr>
                 </thead>
                 <tbody className="tbody">
-                    {buah.map(item => {
+                    {dataHargaBuah.map(item => {
                         return (
                             <tr>
                                 <td>{item.nama}</td>
                                 <td>{item.harga}</td>
-                                <td>{item.berat}</td>
+                                <td> {`${item.berat/1000} kg`}</td>
                             </tr>
                         );
                     })}
