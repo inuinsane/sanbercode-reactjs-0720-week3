@@ -1,10 +1,28 @@
 .App {
   text-align: center;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.table {
+  border: 1px solid black;
+  margin: 30px auto;
+  width: 500px;
+  height: auto;
+}
+
+.thead{
+  background-color: grey;
+}
+
+.tbody {
+  background-color: orange;
+  text-align: left;
 }
 
 @media (prefers-reduced-motion: no-preference) {
