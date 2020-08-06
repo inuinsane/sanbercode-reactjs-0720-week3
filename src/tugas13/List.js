@@ -50,7 +50,7 @@ class List extends Component {
       // console.log(newList);  // mengecek list sebelum ditambah / diedit
       // console.log(index);  // mengecek index yang sedang aktif
 
-      if (index == -1) {
+      if (index === -1) {
         // newList = [...newList,input]; //ketika menggunakan spread, penambahan list di html tidak muncul 
         newList.push(input);
         // console.log(newList);  // mengecek list sesudah ditambah / diedit
