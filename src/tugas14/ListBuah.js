@@ -80,9 +80,20 @@ function ListBuah() {
           })
       }
       let newData = dataBuah;
+      setStatusForm('create');
+      setSelectedId(0);
+      setInputName('');
+      setInputPrice('');
+      setInputWeight('');
       console.log(newData);
+    } else {
+      alert('Inputnya belum lengkap BosQ!');
+      setStatusForm('create');
+      setSelectedId(0);
+      setInputName('');
+      setInputPrice('');
+      setInputWeight('');
     }
-    console.log(event.target.value)
   }
 
 
