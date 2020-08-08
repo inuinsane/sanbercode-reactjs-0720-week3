@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ListBuah from './tugas14/ListBuah';
+import Routes from './tugas15/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <ListBuah />
+    <div>
+      <Routes />
     </div>
   );
 }

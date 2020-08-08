@@ -6,7 +6,7 @@ class Timer extends Component {
         super(props);
         this.state = {
             clock : new Date().toLocaleTimeString(),
-            timer : 5,
+            timer : 10,
         }
         
     }
@@ -37,7 +37,6 @@ class Timer extends Component {
     render() {
         return (
             <table className="table text-lg" style={{ border:"none" }}>
-            {/* Untuk menghilangkan komponen */}
              { this.state.timer > 0 && 
                 <tr>
                     <td className="bold">Sekarang jam: {this.state.clock}</td>

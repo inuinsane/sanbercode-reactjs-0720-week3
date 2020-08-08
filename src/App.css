@@ -43,6 +43,59 @@
 
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgb(73, 79, 82);
+  color: white;
+}
+
+.nav-links {
+  width: 50%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+.link {
+  color: lightgray;
+  text-decoration: none;
+} 
+
+.link:hover {
+  color: whitesmoke;
+  font-weight: bold;
+  animation: ease-in;
+}
+
+.brand {
+  display: flex;
+  height: 30px;
+  padding: 3px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.brand-name:hover {
+  color: lightblue;
+}
+
+.brand-name {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

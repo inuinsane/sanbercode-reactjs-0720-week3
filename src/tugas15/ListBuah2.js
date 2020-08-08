@@ -25,7 +25,7 @@ function ListBuah() {
 
   const handleEdit = (event) => {
     let idBuah = event.target.value;
-    let buah = dataBuah.find(x => x.id === parseInt(idBuah));
+    let buah = dataBuah.find(x => x.id == idBuah);
     console.log(buah);
     setStatusForm('edit');
     setSelectedId(buah.id);
@@ -38,7 +38,7 @@ function ListBuah() {
   const handleDelete = (event) => {
     let idBuah = parseInt(event.target.value)
 
-    let newDataBuah = dataBuah.filter(el => el.id !== idBuah);
+    let newDataBuah = dataBuah.filter(el => el.id != idBuah);
     axios.delete(`${url}/${idBuah}`)
     .then(res => {
       console.log(res)
