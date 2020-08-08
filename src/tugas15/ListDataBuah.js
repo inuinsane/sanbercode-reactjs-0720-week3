@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ContextBuah } from "./ContextBuah";
 import axios from "axios";
-import FormBuah from "./FormBuah";
 
 const ListDataBuah = () => {
-  const [dataBuah, setDataBuah] = useContext(ContextBuah);
+  const [dataBuah, setDataBuah, statusForm, setStatusForm, selectedID, setSeletedID] = useContext(ContextBuah);
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [weight, setWeight] = useState(0);
-  const [selected, setSelected] = useState(null);
   const url = "http://backendexample.sanbercloud.com/api/fruits";
 
   useEffect(() => {
@@ -31,12 +29,10 @@ const ListDataBuah = () => {
   const handleEdit = (event) => {
     let idBuah = event.target.value;
     let buah = dataBuah.find((buah) => buah.id === parseInt(idBuah));
-    console.log(buah);
-    setSelected(buah.id);
+    setSeletedID(buah.id);
     setName(buah.name);
     setPrice(buah.price);
     setWeight(buah.weight);
-    console.log(selected);
     
     
   };

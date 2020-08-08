@@ -3,18 +3,16 @@ import { ContextBuah } from "./ContextBuah";
 import axios from 'axios';
 
 const FormBuah = () => {
-  const [dataBuah, setDataBuah] = useContext(ContextBuah);
-  const [statusForm, setStatusForm] = useContext(ContextBuah);
+  const [dataBuah, setDataBuah, statusForm, setStatusForm, selectedID, setSelectedID] = useContext(ContextBuah);
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [weight, setWeight] = useState(0);
-  const [selectedId, setSelectedId] = useState(null);
   const url = "http://backendexample.sanbercloud.com/api/fruits";
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setDataBuah([...dataBuah, { name, price, weight }]);
+    setDataBuah([...dataBuah, { name, price, weight }]);
     if (
       name.replace(/\s/g, "") !== "" &&
       price.replace(/\s/g, "") !== "" &&
@@ -34,10 +32,10 @@ const FormBuah = () => {
         });
       } else if (statusForm === "edit") {
         axios
-          .put(`${url}/${selectedId}`, { name, price, weight })
+          .put(`${url}/${selectedID}`, { name, price, weight })
           .then((res) => {
             console.log(res);
-            let buah = dataBuah.find((el) => el.id === selectedId);
+            let buah = dataBuah.find((el) => el.id === selectedID);
             buah.name = name;
             buah.price = price;
             buah.weight = weight;
@@ -45,10 +43,11 @@ const FormBuah = () => {
           });
       }
     }
-
     setName("");
     setPrice(0);
     setWeight(0);
+    setStatusForm('create');
+    setSelectedID(null);
   };
 
   const handleChangeName = (event) => {
